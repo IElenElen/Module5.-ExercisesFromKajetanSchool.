@@ -8,6 +8,7 @@ namespace Module5._ExercisesFromKajetanSchool_
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, moduł 5.");
+            Console.WriteLine();
 
             //zestaw kolorów i związanych z nimi rzeczami
             /* czerwone serce, niebieskie niebo, brązowa ziemia, żółte słońce */
@@ -27,20 +28,15 @@ namespace Module5._ExercisesFromKajetanSchool_
             } */
 
             //dlaczego nie otwiera mi się plik csv? Kajtkowi otwiera się...
-            //using FileStream fs = File.Open(@"C:\Users\Ilka\Desktop\.net\KoloroweRzeczy.csv", FileMode.Open, FileAccess.Read);
+            using FileStream fs = File.Open(@"C:\Users\Ilka\Desktop\.net\KoloroweRzeczy.csv", FileMode.Open, FileAccess.Read);
             string text = string.Empty;
             byte[] buf = new byte[1024];
             int c;
-            using (FileStream fs = File.Open(@"C:\Users\Ilka\Desktop\.net\KoloroweRzeczy.csv", FileMode.Open, FileAccess.Read))
-            {
                 while ((c = fs.Read(buf, 0, buf.Length)) > 0)
                 {
-                    /*string*/
                     text = Encoding.UTF8.GetString(buf, 0, c);
-                    Console.WriteLine($"{text}");
                 }
-                //Console.WriteLine($"{text}");
-            }
+                Console.WriteLine($"{text}");
         }
     }
 }
