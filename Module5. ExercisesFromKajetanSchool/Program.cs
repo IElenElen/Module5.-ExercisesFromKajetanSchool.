@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Diagnostics;
 using System.Text;
 
 namespace Module5._ExercisesFromKajetanSchool_
@@ -28,7 +29,7 @@ namespace Module5._ExercisesFromKajetanSchool_
             } */
 
             //dlaczego nie otwiera mi się plik csv? Kajtkowi otwiera się...
-            using FileStream fs = File.Open(@"C:\Users\Ilka\Desktop\.net\KoloroweRzeczy.csv", FileMode.Open, FileAccess.Read);
+            /*using FileStream fs = File.Open(@"C:\Users\Ilka\Desktop\.net\KoloroweRzeczy.csv", FileMode.Open, FileAccess.Read);
             string text = string.Empty;
             byte[] buf = new byte[1024];
             int c;
@@ -36,7 +37,14 @@ namespace Module5._ExercisesFromKajetanSchool_
                 {
                     text = Encoding.UTF8.GetString(buf, 0, c);
                 }
-                Console.WriteLine($"{text}");
+                Console.WriteLine($"{text}");*/
+            string filePath = @"C:\Users\Ilka\Desktop\.net\KoloroweRzeczy.csv";
+            ProcessStartInfo startInfo = new ProcessStartInfo
+            {
+                FileName = filePath,
+                UseShellExecute = true
+            };
+            Process.Start(startInfo);
         }
     }
 }
