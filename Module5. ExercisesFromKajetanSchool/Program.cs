@@ -11,6 +11,7 @@ namespace Module5._ExercisesFromKajetanSchool_
             Console.WriteLine("Hello, moduł 5.");
             Console.WriteLine();
 
+            Console.WriteLine("Część: 5.5");
             //zestaw kolorów i związanych z nimi rzeczami
             /* czerwone serce, niebieskie niebo, brązowa ziemia, żółte słońce */
 
