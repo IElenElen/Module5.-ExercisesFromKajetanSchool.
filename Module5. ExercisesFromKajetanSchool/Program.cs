@@ -16,10 +16,8 @@ namespace Module5._ExercisesFromKajetanSchool_
 
             SortedList<string, string> colourAndThing = new SortedList<string, string>();
 
-            /*colourAndThing.Add("czerwone", "serce");
-            colourAndThing.Add("niebieskie", "niebo");
-            colourAndThing.Add("brązowa", "ziemia");
-            colourAndThing.Add("żółte", "słońce");*/
+            //colourAndThing.Add("czerwona", "krew");
+
             //C:\Users\Ilka\Desktop\.net\KoloroweRzeczy.csv
 
             /* starsza wersja zapisu
@@ -28,7 +26,7 @@ namespace Module5._ExercisesFromKajetanSchool_
 
             } */
 
-            //dlaczego nie otwiera mi się plik csv? Kajtkowi otwiera się...
+            //zapis rozbudowany
             /*using FileStream fs = File.Open(@"C:\Users\Ilka\Desktop\.net\KoloroweRzeczy.csv", FileMode.Open, FileAccess.Read);
             string text = string.Empty;
             byte[] buf = new byte[1024];
@@ -38,13 +36,19 @@ namespace Module5._ExercisesFromKajetanSchool_
                     text = Encoding.UTF8.GetString(buf, 0, c);
                 }
                 Console.WriteLine($"{text}");*/
-            string filePath = @"C:\Users\Ilka\Desktop\.net\KoloroweRzeczy.csv";
-            ProcessStartInfo startInfo = new ProcessStartInfo
-            {
-                FileName = filePath,
-                UseShellExecute = true
-            };
-            Process.Start(startInfo);
+
+            //wersja krótsza //dlaczego tu nie tworzy mi się tablica?
+            //var lines = File.ReadLines(@"C:\Users\Ilka\Desktop\.net\KoloroweRzeczy.csv");
+
+            string path = @"C:\Users\Ilka\Desktop\.net\KoloroweRzeczy.csv";
+            //using FileStream fs = File.OpenWrite(path);
+            //using StreamWriter sw = new StreamWriter(fs);
+
+            //sw.WriteLine("czerwona", "krew"); krew nie dopisała się
+            ///ta metoda nadpisuje, jeśli zaś chcę dopisać to sposób poniższy
+            using StreamWriter sw = File.AppendText(path);
+            sw.WriteLine("czerwona", "krew"); //dopisuje się w linii ostatniej a nie w nowej linii
+            //parsowanie???
         }
     }
 }
