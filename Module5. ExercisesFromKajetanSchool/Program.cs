@@ -49,7 +49,7 @@ namespace Module5._ExercisesFromKajetanSchool_
 
             using StreamWriter sw = File.AppendText(path);
             sw.WriteLine("biały ser, 3"); //tu problem, bo zapisuje mi w ostatniej istniejącej linii
-                                          //a nie w nowej pod spodem
+                                          //a nie w nowej pod spodem...
         }
     }
 }
